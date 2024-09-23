@@ -1,0 +1,37 @@
+<nb-card class="modal-card">
+    <nb-card-header>
+        <div class="close-modal-icon" (click)="decline()">
+            <img src="../../../../assets/images/icons/cancel.svg" alt="">
+        </div>
+       
+    </nb-card-header>
+    <nb-card-body>
+            <div class="content-box">
+                <div class="images-box">
+                    <img src="../../../../assets/images/icons/change-delete-icon.svg" alt="">
+                </div>
+                <div class="details-box">
+                    <div class="modal-title text-center">
+                        Are you sure
+                        <br>
+                        <small>You want to submit your order?</small>
+                    </div>
+                </div>
+            </div>
+    </nb-card-body>
+     
+
+
+    <nb-card-footer>
+        <div class="close-modal-container">
+            <button shape="semi-round" (click)="decline()" class="btn-shadow mr-2 close-button-size" nbButton size="small" status="basic">
+               Save as draft
+              </button>
+            <button shape="semi-round"  (click)="approve()" nbButton status="primary" size="small" class="save-button-size">
+               Yes, submit order
+            </button>
+        </div>
+    </nb-card-footer>
+</nb-card>
+
+

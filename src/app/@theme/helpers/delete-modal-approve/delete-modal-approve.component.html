@@ -1,0 +1,37 @@
+    <nb-card class="modal-card">
+        <nb-card-header>
+            <div class="close-modal-icon" (click)="decline()">
+                <img src="../../../../assets/images/icons/cancel.svg" alt="">
+            </div>
+           
+        </nb-card-header>
+        <nb-card-body>
+                <div class="content-box">
+                    <div class="images-box">
+                        <img src="../../../../assets/images/icons/change-delete-icon.svg" alt="">
+                    </div>
+                    <div class="details-box">
+                        <div class="modal-title text-center" [innerHTML]="headTitle">
+                        </div>
+                        <br>
+                        <small [innerHTML]="title"></small>
+                    </div>
+                </div>
+        </nb-card-body>
+         
+    
+  
+        <nb-card-footer>
+            <div class="close-modal-container">
+                <button shape="semi-round"  (click)="approve()" nbButton status="primary" size="small" class="save-button-size mr-2">
+                    {{btnText}}
+                  </button>
+                <button shape="semi-round" (click)="decline()" class="btn-shadow  close-button-size" nbButton size="small" status="basic">
+                    Close
+                  </button>
+            
+            </div>
+        </nb-card-footer>
+    </nb-card>
+
+

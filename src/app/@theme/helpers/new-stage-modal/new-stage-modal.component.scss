@@ -1,0 +1,122 @@
+.modal-card {
+    min-width: 530px;
+    min-height: 300px;
+    padding: 14px;
+    border-radius: 12px;
+    border-width: 1px, 1px, 1px, 1px;
+    border-style: solid;
+    border-color: #F6F8FA;
+
+
+    &.fullscreen {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.label-name {
+    font-family: 'SF UI Text Medium';
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: left;
+}
+.modal-title {
+    font-family: 'SF UI Text Medium';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+.close-modal-icon {
+    float: right;
+}
+
+.create-form-body {
+    margin-top: 20px;
+}
+
+.form-modal-group {
+    margin-bottom: 5px;
+}
+.close-modal-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.save-button-size {
+    min-width: 80px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: left;
+}
+.close-button-size {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: left;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .images-box {
+        display: flex;
+        justify-content: center;
+    }
+    .details-box {
+        margin: 20px 0;
+    }
+}
+.select-size-md {
+    max-width: 200px;
+}
+
+.next-status-label {
+    font-family: 'SF UI Text Medium';
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.15000000596046448px;
+    color: #414552;
+    margin-right: 10px;
+
+}
+.selected-status  {
+    display: flex;
+}
+.line {
+    margin: 10px 0;
+    border-bottom: 1px solid #f6f8fa;
+}
+
+
+.heckbox-checklist {
+    font-family: 'SF UI Text Medium';
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.15000000596046448px;
+    color: #30313D;
+}
+
+.select-qc-checklist {
+    display: flex;
+    flex-direction: column;
+}
+.check-list-title {
+    font-family: 'SF UI Text Medium';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: left;
+    color: #30313D;
+}

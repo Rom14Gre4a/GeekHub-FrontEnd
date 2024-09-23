@@ -1,0 +1,27 @@
+<nb-card class="modal-card">
+    <nb-card-header>
+      <div class="modal-header">
+        Select shade guide system
+      </div>
+    </nb-card-header>
+    <nb-card-body class="modal-card-body">
+        <div class="radio-group-padding w-100">
+            <nb-radio-group  [(ngModel)]="selectedShadeSystem">
+                <nb-radio  *ngFor="let system of teethShadeSystems" [value]="system.id">
+                  <span class="shade-name">{{ system.name }}</span>
+                  <span *ngIf="system.id === locationShade" class="default-shade">(default)</span>
+                </nb-radio>
+              </nb-radio-group>
+    </div>  
+    </nb-card-body>
+    <nb-card-footer>
+      <div class="control-buttons d-flex">
+        <button class="btn-control" nbButton size="small" (click)="cancel()">
+          Cancel 
+        </button>
+        <button class="btn-control" nbButton status="primary" size="small" (click)="confirm()">
+          Confirm
+        </button>
+      </div>
+    </nb-card-footer>
+  </nb-card>

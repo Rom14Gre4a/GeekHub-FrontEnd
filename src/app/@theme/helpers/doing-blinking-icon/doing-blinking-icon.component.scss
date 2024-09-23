@@ -1,0 +1,16 @@
+.lightbulb {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #00ff00, transparent);
+    border-radius: 50%;
+    animation: fade1 2s infinite;
+}
+
+@keyframes fade1 {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 1;
+    }
+}

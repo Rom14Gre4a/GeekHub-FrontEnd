@@ -1,0 +1,189 @@
+<nb-reveal-card [showToggleButton]="false" [revealed]="toggleCardStatus">
+    <nb-card-front>
+        <nb-card class="modal-card" *ngIf="orderDto.id">
+            <nb-card-header>
+                <button (click)="toggleCardStatus = !toggleCardStatus" nbButton size="small" class="settings-btn">
+                    Edit
+                </button>
+            </nb-card-header>
+            <nb-card-body>
+                <section>
+                    <div [style.line-height.px]="stickerBarConfig.font + 2" [style.font-size.px]="stickerBarConfig.font"
+                        id="couponPage123" class="sticker-section" #screen>
+                        <div id="qrcode"  [style.width.px]="stickerBarConfig.width" [style.height.px]="stickerBarConfig.height">
+                            <table class="table-base">
+                                <colgroup>
+                                    <col style="width:50%">
+                                    <col style="width:50%">
+                                </colgroup>
+                                <tbody>
+                                    <tr *ngFor="let item of stickerBarConfig.variableArr">
+                                        <td class="thead" [style.line-height.px]="stickerBarConfig.font + 2"
+                                            [style.font-size.px]="stickerBarConfig.font">{{item.name}}</td>
+                                        <td class="tbody" [style.line-height.px]="stickerBarConfig.font + 2"
+                                            [style.font-size.px]="stickerBarConfig.font">{{getCurrentValue(item)}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="bar-code">
+                                <div style="margin-top: 10px; display: flex;" *ngIf="!toggleCardStatus">
+                                    <ngx-generic-barcode [isConfig]="true" [widthConf]="stickerBarConfig.widthbarcode"
+                                     [heightConf]="stickerBarConfig.heightbarcode" 
+                                    [code]="orderDto.code"> </ngx-generic-barcode>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </nb-card-body>
+            <nb-card-footer>
+
+                <div class="close-modal-container d-flex justify-content-between">
+                    <button style="box-shadow: none;" shape="semi-round" (click)="decline()"
+                        class="btn-shadow mr-2 close-button-size border-0 " nbButton size="small" status="basic">
+                        Close
+                    </button>
+                    <div>
+                        <button shape="semi-round"
+                            [printStyle]="{ '@page': { size: isLandscape ? ' landscape !important' : 'portrait !important'} }"
+                            [useExistingCss]="true" printSectionId="couponPage123" ngxPrint nbButton status="primary"
+                            size="small" class="save-button-size">
+                            <nb-icon icon="print-btn-white" pack="great-pack"></nb-icon>
+                            Print
+                        </button>
+                    </div>
+                </div>
+            </nb-card-footer>
+        </nb-card>
+    </nb-card-front>
+    <nb-card-back class="h-100">
+        <nb-card class="h-100">
+            <nb-card-body>
+                <nb-card class="modal-card" *ngIf="orderDto.id">
+
+                    <nb-card-header>
+                        <div class="row w-100 m-0 justify-content-between">
+                            <div class="col-6">
+                                <button (click)="saveConfigSticker()" nbButton size="small" class="settings-btn">
+                                    Save & Preview
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <div class="checked-settings">
+                                    <input type="checkbox" [(ngModel)]="stickerBarConfig.applyAllSettings" />
+                                    Apply changes to all stickers
+                                </div>
+                            </div>
+                        </div>
+                    </nb-card-header>
+
+                    <nb-card-body>
+                        <div class="row configurate-barsticker-box">
+                            <div class="col-7">
+                                <div class="variable-max-size">
+                                    <div class="variable-drag-container">
+                                        <!-- cdkDropList   (cdkDropListDropped)="drop($event)" -->
+                                        <div   class="variable-drag-list">
+                                            <div class="variable-drag-item"
+                                                *ngFor="let item of stickerBarConfig.variableArr | orderBy: 'order', let i = index"
+                                                >
+                                                <!-- cdkDrag -->
+                                                <div class="variable-drag-info">
+                                                    <img class="drag-icon point-event "
+                                                        src="../../../../../assets/images/icons/drag-icon.png" alt="">
+                                                    <div class="order-index">{{item.order}}</div>
+                                                    <div class="name"> {{item.name}}</div>
+                                                </div>
+                                                <nb-icon (click)="removeVariables(item)" icon="close-modal-icon"
+                                                    pack="great-pack"></nb-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter-item">
+                                        <ng-select appendTo="body" [searchable]="false"
+                                            (change)="selectVariables($event)" placeholder="Add items" id="variableIds"
+                                            [clearable]="false">
+                                            <ng-container *ngFor="let variable of variablesItems">
+                                                <ng-option [value]="variable.id">
+                                                    {{variable.name}}
+                                                </ng-option>
+                                            </ng-container>
+
+                                        </ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="settings-size-container">
+                                    <div class="size-config-settings">
+                                        <div for="">Width
+                                            <small>px</small>
+                                        </div>
+                                        <input [(ngModel)]="stickerBarConfig.width" type="number" nbInput fullWidth
+                                            fieldSize="small" placeholder="">
+                                        <!-- <nb-icon class="unit-icon" icon="unit-size" pack="great-pack"></nb-icon> -->
+                                    </div>
+
+                                    <div class="size-config-settings">
+                                        <div for="">Height
+                                            <small>px</small>
+                                        </div>
+                                        <input [(ngModel)]="stickerBarConfig.height" type="number" nbInput fullWidth
+                                            fieldSize="small" placeholder="">
+                                    </div>
+
+                                    <div class="size-config-settings">
+                                        <div for="">Font size
+                                            <small>px</small>
+                                        </div>
+                                        <div style="width: 70px;">
+                                            <ng-select [(ngModel)]="stickerBarConfig.font" class="size-config-select"
+                                                appendTo="body" [searchable]="false" [clearable]="false"
+                                                placeholder="1">
+                                                <ng-option *ngFor="let num of fontSizeArr" [value]="num">
+                                                    {{num}}
+                                                </ng-option>
+                                            </ng-select>
+                                        </div>
+                                    </div>
+
+                                    <div class="size-config-settings">
+                                        <div for="">Width Barcode 
+                                            <small>proportion</small>
+
+                                        </div>
+                                        <div style="width: 70px;">
+                                            <input [(ngModel)]="stickerBarConfig.widthbarcode" type="number" nbInput fullWidth
+                                            fieldSize="small" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="size-config-settings">
+                                        <div for="">Height Barcode
+                                            <small>px</small>
+                                        </div>
+                                        <input [(ngModel)]="stickerBarConfig.heightbarcode" type="number" nbInput fullWidth
+                                            fieldSize="small" placeholder="">
+                                    </div>
+                                    <div class="size-config-settings">
+                                        <div class="close-modal-container d-flex justify-content-between">
+                                            <nb-toggle (checkedChange)="pageSizePrintConfig($event)"
+                                                [(ngModel)]="isLandscape">Landscape</nb-toggle>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </nb-card-body>
+                    <nb-card-footer>
+
+                    </nb-card-footer>
+                </nb-card>
+            </nb-card-body>
+        </nb-card>
+    </nb-card-back>
+</nb-reveal-card>

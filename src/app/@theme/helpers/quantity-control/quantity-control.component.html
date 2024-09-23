@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="row w-100 m-0">
+        <div class="col-12 p-0">
+            <div class="form-check-inline">
+                <button [disabled]="data == 1" class="btn btn-primary btn-sm" (click)="minus()"><i
+                        class="fa fa-minus" style="font-size: 13px;"></i></button>
+            </div>
+
+            <div class="form-check-inline">
+                {{data}}
+            </div>
+            <div class="form-check-inline mr-0">
+                <button class="btn btn-primary btn-sm" (click)="plus()"><i class="fa fa-plus" style="font-size: 13px;"></i></button>
+            </div>
+
+        </div>
+    </div>

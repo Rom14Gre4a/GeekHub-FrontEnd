@@ -1,0 +1,112 @@
+.modal-card {
+    min-width: 530px;
+    min-height: 300px;
+    padding: 14px;
+    border-radius: 12px;
+    border-width: 1px, 1px, 1px, 1px;
+    border-style: solid;
+    border-color: #F6F8FA;
+
+
+    &.fullscreen {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.tag-name {
+    font-family: 'SF UI Text Medium';
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0570DE;
+
+}
+.tag-delete {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+
+}
+.label-name {
+    font-family: 'SF UI Text Medium';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: center;
+    color: #6A7383;
+    margin: 15px 0;
+ 
+}
+.modal-title {
+    font-family: 'SF UI Text Medium';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+}
+.close-modal-icon {
+    float: right;
+}
+
+.create-form-body {
+    margin-top: 20px;
+}
+
+.form-modal-group {
+    margin-bottom: 5px;
+}
+.close-modal-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.save-button-size {
+    min-width: 80px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: left;
+}
+.close-button-size {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: left;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .images-box {
+        display: flex;
+        justify-content: center;
+    }
+    .details-box {
+        margin: 20px 0;
+    }
+}
+.select-size-md {
+    max-width: 200px;
+}
+.image-box {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.empty-tag {
+    text-align: center;
+}
+.min-size-add {
+    min-width: 150px
+}

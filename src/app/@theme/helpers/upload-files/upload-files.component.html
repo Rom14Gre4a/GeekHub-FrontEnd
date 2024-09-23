@@ -1,0 +1,25 @@
+<div class="w-100" [nbSpinner]="isLoading" nbSpinnerSize="large" nbSpinnerStatus="basic">
+    <label  class="w-100" [for]="'uploadFile' + fields">
+<div class="upload-section">
+    <div class="upload-icon">
+        <img src="../../../../../assets/images/icons/upload-icon.svg" alt="">
+    </div>
+    <div class="upload-label">
+        Upload files
+    </div>
+</div>
+</label>
+<input [id]="'uploadFile' + fields" 
+(change)="orderFileUpload($event.target.files,fields)" hidden multiple type="file" name="image" />
+</div>
+<div class="upload-file-info mb-3" >
+    <div *ngIf="uploadedFiles.length > 0" class="upload-file-info-title">Uploaded files</div>   
+    <div *ngFor="let file of order.orderFiles let i = index" class="upload-file-info-filename">
+        <ng-container *ngIf="file.typeId == fields">
+            <nb-icon icon="file-text-outline"></nb-icon>
+            <a class="non-href" [href]="file.url">{{getNameFile(file.url)}}</a>
+            <nb-icon class="ml-2" icon="trash-2-outline" (click)="deleteFile(file.id)"></nb-icon>
+        </ng-container>
+    </div>
+  </div>
+  

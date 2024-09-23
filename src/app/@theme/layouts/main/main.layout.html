@@ -1,0 +1,19 @@
+<section class="root-container">
+    <header>
+        <ngx-header></ngx-header>
+    </header>
+    <main>
+        <nb-layout>
+            <nb-layout-column>
+              <ng-content select="router-outlet"></ng-content>
+            </nb-layout-column>
+          </nb-layout>
+      
+    </main>
+    <footer>
+      <div class="powered-by">
+        Powered by
+        <img src="../../../../assets/images/greatlab-footer.png" alt="">
+      </div>
+    </footer>
+</section>

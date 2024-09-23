@@ -1,0 +1,109 @@
+@import 'bootstrap/scss/mixins/breakpoints';
+@import '@nebular/theme/styles/global/breakpoints';
+@import '../../styles/themes';
+
+@include nb-install-component() {
+  .header-conatiner {
+    padding: 16px 0;
+    background: #F6F8FA;
+    display: flex;
+    align-items: center;
+    .great-logo-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      img {
+        height: 30px;
+        width: auto;
+      }
+    }
+    .great-search-container {
+      width: 100%;
+    }
+    .great-header-menu-container {
+      display: flex;
+      height: 100%;
+      justify-content: flex-end;
+      .actions-list {
+        align-items: center;
+        display: flex;
+        .action-item {
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          margin: 0 8px;
+          display: flex;
+          .action-item-icon {
+            width: 16px;
+            height: 16px;
+          }
+          .action-item-label {
+            margin-left: 5px;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 500;
+            color: #545969;
+            font-family: 'SF Pro Display';
+          } 
+        }
+      }
+    }
+  
+
+  }
+  .header-menu {
+      padding: 12px 0;
+      background: #FFF;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #F6F8FA;
+      .navigation-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .navigation-list {
+          gap: 5px;
+          display: flex;
+          .navigat-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'SF UI Text Regular';
+            border-radius: 12px;
+            padding: 5px 10px 5px 10px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.15px;
+            color: #1A1B25;
+            text-decoration: none;
+            &.active {
+              background:#0570DE;
+              color: #FFF;
+            }
+          }
+        }
+      }
+      .header-menu-actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+  }
+}
+
+
+.name-title {
+  text-transform: capitalize;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #545969;
+  color: #30313d;
+  font-family: 'SF Pro Display';
+  padding: 4px 10px;
+
+}

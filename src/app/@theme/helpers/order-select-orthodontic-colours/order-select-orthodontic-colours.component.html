@@ -1,0 +1,216 @@
+<div class="colors-mouthguard-teeth row w-100 m-0" *ngIf="this.product.product?.orthoColours">
+  <div class="d-flex align-items-start col-6" *ngIf="arch.upper">
+    <ngx-orthodontic-product-colors [arch]="'upper'" class="w-100" [colorsAmount]="orderProductColorModel.upperColorCount"
+      [color1]="getColor(1, 'upper')" [color2]="getColor(2, 'upper')" [color3]="getColor(3, 'upper')"
+      [color4]="getColor(4, 'upper')" [color5]="getColor(5, 'upper')"></ngx-orthodontic-product-colors>
+    <div class="selects-container" *ngIf="!disabled">
+      <div class="form-group" *ngIf="product.product.orthoColours !== 1">
+        <div for="colors-amount" class="select-label">
+          Colors amount
+        </div>
+        <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.upperColorCount"
+          (ngModelChange)="valueChange.emit(value)" name="colors-amount" id="colors-amount" placeholder="Colors Amount"
+          [required]="true" class="select d-block">
+          <nb-option [value]="2" class="select-option">2</nb-option>
+          <nb-option [value]="3" class="select-option"> 3</nb-option>
+          <nb-option [value]="4" class="select-option">4</nb-option>
+          <nb-option [value]="5" class="select-option">5 </nb-option>
+        </nb-select>
+        <div *ngIf="submitted && !pcolorsValArr.colorsAmount" class="invalid-feedback d-block">
+          <div>Please fill out this field.
+          </div>
+        </div>
+      </div>
+      <ng-container>
+        <div class="form-group">
+          <!-- <div for="sports-color-1" class="select-label ">
+            Color 1
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.upperColor1"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-1" id="sports-color-1" placeholder="Color 1"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.upperColor1" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.upperColorCount >= 2">
+          <!-- <div for="sports-color-2" class="select-label ">
+            Color 2
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.upperColor2"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-2" id="sports-color-2" placeholder="Color 2"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.upperColor2" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.upperColorCount >= 3">
+          <!-- <div for="sports-color-3" class="select-label ">
+            Color 3
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.upperColor3"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-3" id="sports-color-3" placeholder="Color 3"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.upperColor3" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.upperColorCount >= 4">
+          <!-- <div for="sports-color-4" class="select-label ">
+            Color 4
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.upperColor4"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-4" id="sports-color-4" placeholder="Color 4"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.upperColor4" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.upperColorCount >= 5">
+          <!-- <div for="sports-color-5" class="select-label ">
+            Color 5
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.upperColor5"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-5" id="sports-color-5" placeholder="Color 5"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.upperColor5" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="d-flex align-items-start col-6" *ngIf="arch.lower">
+    <ngx-orthodontic-product-colors [arch]="'lower'" class="w-100 lower"
+      [colorsAmount]="orderProductColorModel.lowerColorCount" [color1]="getColor(1, 'lower')"
+      [color2]="getColor(2, 'lower')" [color3]="getColor(3, 'lower')" [color4]="getColor(4, 'lower')"
+      [color5]="getColor(5, 'lower')"></ngx-orthodontic-product-colors>
+    <div class="selects-container" *ngIf="!disabled">
+      <div class="form-group" *ngIf="product.product.orthoColours !== 1">
+        <div for="colors-amount" class="select-label">
+          Colors amount
+        </div>
+        <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.lowerColorCount"
+          (ngModelChange)="valueChange.emit(value)" name="colors-amount" id="colors-amount" placeholder="Colors Amount"
+          [required]="true" class="select d-block">
+          <nb-option [value]="2" class="select-option">2</nb-option>
+          <nb-option [value]="3" class="select-option"> 3</nb-option>
+          <nb-option [value]="4" class="select-option">4</nb-option>
+          <nb-option [value]="5" class="select-option">5 </nb-option>
+        </nb-select>
+        <div *ngIf="submitted && !pcolorsValArr.colorsAmount" class="invalid-feedback d-block">
+          <div>Please fill out this field.
+          </div>
+        </div>
+      </div>
+      <ng-container>
+        <div class="form-group">
+          <!-- <div for="sports-color-1" class="select-label ">
+            Color 1
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.lowerColor1"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-1" id="sports-color-1" placeholder="Color 1"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.lowerColor1" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.lowerColorCount >= 2">
+          <!-- <div for="sports-color-2" class="select-label ">
+            Color 2
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.lowerColor2"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-2" id="sports-color-2" placeholder="Color 2"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.lowerColor2" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.lowerColorCount >= 3">
+          <!-- <div for="sports-color-3" class="select-label ">
+            Color 3
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.lowerColor3"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-3" id="sports-color-3" placeholder="Color 3"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.lowerColor3" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.lowerColorCount >= 4">
+          <!-- <div for="sports-color-4" class="select-label ">
+            Color 4
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.lowerColor4"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-4" id="sports-color-4" placeholder="Color 4"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.lowerColor4" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="orderProductColorModel.lowerColorCount >= 5">
+          <!-- <div for="sports-color-5" class="select-label ">
+            Color 5
+          </div> -->
+          <nb-select size="small" fullWidth [(ngModel)]="orderProductColorModel.lowerColor5"
+            (ngModelChange)="valueChange.emit(value)" name="sports-color-5" id="sports-color-5" placeholder="Color 5"
+            [required]="true" class="select d-block">
+            <nb-option *ngFor="let option of sportsColors" [value]="option.value" class="select-option">
+              {{option.label}}
+            </nb-option>
+          </nb-select>
+          <div *ngIf="submitted && !orderProductColorModel.lowerColor5" class="invalid-feedback d-block">
+            <div>Please fill out this field.
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</div>

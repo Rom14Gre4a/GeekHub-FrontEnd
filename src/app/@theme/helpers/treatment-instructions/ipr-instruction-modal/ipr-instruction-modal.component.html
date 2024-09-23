@@ -1,0 +1,81 @@
+<form class="form-test" name="form" #forms="ngForm" (ngSubmit)="submit(forms)">
+  <nb-card class="modal-card">
+    <nb-card-header>
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="modal-title">
+          Plase setup instruction for space between <span class="tooth_name">{{data}}</span>
+        </div>
+        <div class="form-modal-group select-size-md">
+        </div>
+      </div>
+      <div class="line"></div>
+
+    </nb-card-header>
+    <nb-card-body>
+
+
+
+
+      <div class="form-group col-md-12">
+        <h6>Amount</h6>
+        <div class="dropdown-divider"></div>
+        <mat-slider 
+          class="amountLabel"
+          (input)="getSliderValue($event)"
+          (change)="changeSliderValue($event)"
+          thumbLabel
+          [displayWith]="formatLabel"
+          [value]="amount"
+          [step]="0.1"
+          [min]="0.1"
+          [max]="0.5"
+        >
+        </mat-slider>
+        <div class="d-flex justify-content-between">
+          <span>0.1</span>
+          <span>Your choice: {{ amount }}</span>
+          <span>0.5</span>
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-12">
+        <h6>Before step</h6>
+        <div class="dropdown-divider"></div>
+        <mat-slider 
+          class="beforeLabel"
+          (input)="getSliderValue($event)"
+          (change)="changeSliderValue($event)"
+          thumbLabel
+          [displayWith]="formatLabel"
+          [value]="before"
+          [step]="1"
+          [min]="1"
+          [max]="30"
+        >
+        </mat-slider>
+        <div class="d-flex justify-content-between">
+          <span>1</span>
+          <span>Your choice {{ before }}</span>
+          <span>30</span>
+        </div>
+      </div>
+
+
+
+
+
+    </nb-card-body>
+    <nb-card-footer>
+      <div class="close-modal-container">
+        <button (click)="cancel()" shape="semi-round" class="btn-shadow mr-2 close-button-size" nbButton size="small"
+          status="basic">
+          Close
+        </button>
+        <button type="submit" shape="semi-round" nbButton status="primary" size="small" class="save-button-size">
+          Save
+        </button>
+      </div>
+    </nb-card-footer>
+  </nb-card>
+</form>

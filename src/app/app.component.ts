@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+/**
+ * @license
+ * Copyright Akveo. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+ */
+import { Component, OnInit } from '@angular/core';
+import { NbIconLibraries } from '@nebular/theme';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'ngx-app',
+  template: ``
+
 })
-export class AppComponent {
-  title = 'GeekHub';
+export class AppComponent implements OnInit {
+
+  ngOnInit(): void {
+  }
 }

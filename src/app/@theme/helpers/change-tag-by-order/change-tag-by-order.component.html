@@ -1,0 +1,81 @@
+<nb-card class="modal-card" [nbSpinner]="isloader"
+nbSpinnerStatus="info">
+    <ng-container *ngIf="!isDelete">
+        <nb-card-header>
+            <div class="image-box">
+                <img src="../../../../assets/images/icons/change-delete-icon.svg" alt="">
+            </div>
+            <div class="modal-title">
+                Which tag do you want to add to?
+            </div>
+        </nb-card-header>
+        <nb-card-body >
+                <div class="form-modal-group  mt-3 mb-5">
+                    <ng-select appendTo="body" placeholder="All Status" [(ngModel)]="orderTagDto.name" id="status"
+                        [searchable]="false" [clearable]="false"> <ng-option [value]='0' disabled>None</ng-option>
+                        <ng-option *ngFor="let tag of tagsList" [value]="tag.tag">{{tag.tag}}</ng-option>
+                    </ng-select>
+                </div>
+        </nb-card-body>
+    
+        <nb-card-footer>
+            <div class="close-modal-container">
+                <button shape="semi-round" (click)="decline()" class="btn-shadow mr-2 close-button-size" nbButton
+                    size="small" status="basic">
+                    Close
+                </button>
+                <button shape="semi-round" (click)="changeTag()" nbButton status="primary" size="small"
+                    class="save-button-size">
+                    Save
+                </button>
+            </div>
+        </nb-card-footer>
+    </ng-container>
+<ng-container  *ngIf="isDelete">
+    
+    <nb-card-header>
+        <div class="image-box">
+            <img src="../../../../assets/images/icons/change-delete-icon.svg" alt="">
+        </div>
+        <div class="modal-title">
+            Which tag do you want to delete to?
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <div class="empty-tag" *ngIf="order.tags.length == 0">
+            <div class="label-name">
+                Tags list is empty
+            </div>
+            <button (click)="isDelete = false" nbButton status="primary" size="small" class="min-size-add">
+                Add tag
+                <nb-icon icon="arrow-right" pack="great-pack" class="custom-icon"></nb-icon>
+            </button>
+        </div>
+        <nb-list *ngIf="order.tags.length !== 0">
+            <nb-list-item *ngFor="let tag of order.tags">
+                <div class="tag-name">
+                    {{ tag.name }}
+                </div>
+                <div class="tag-delete" (click)="removeTag(tag)">
+                    <nb-icon icon="remove" pack="great-pack"></nb-icon>
+                </div>
+            </nb-list-item>
+          </nb-list>
+    </nb-card-body>
+    <nb-card-footer>
+        <div class="close-modal-container">
+            <button shape="semi-round" (click)="decline()" class="btn-shadow mr-2 close-button-size" nbButton
+                size="small" status="basic">
+                Close
+            </button>
+            <button shape="semi-round" (click)="save()" nbButton status="primary" size="small"
+                class="save-button-size">
+                Save
+            </button>
+        </div>
+    </nb-card-footer>
+
+
+</ng-container>
+</nb-card>
+

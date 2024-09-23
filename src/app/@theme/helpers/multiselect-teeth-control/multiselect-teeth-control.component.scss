@@ -1,0 +1,376 @@
+$color1: #1A9DE9;
+$color2: #F07C7C;
+$color3: #F9D36A;
+$color4: #28AC07;
+$color5: #715DC2;
+$color6: #022772;
+$color8: #28AC07;
+$color9: #28AC07;
+
+
+
+.is-enebled {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: transparent;
+    pointer-events: all;
+    left: 0;
+    top: 0;
+}
+
+.color_1 {
+    background: $color1;
+}
+
+.color_2 {
+    background: $color2;
+}
+
+.color_3 {
+    background: $color3;
+}
+
+.color_4 {
+    background: $color4;
+}
+
+.color_5 {
+    background: $color5;
+}
+
+.color_6 {
+    background: $color6;
+}
+.color_8 {
+    background: $color8;
+}
+.color_9 {
+    background: $color9;
+}
+.teeth {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &.color_1 {
+        .fill {
+            fill: #FFF;
+        }
+
+        .stroke {
+            fill: $color1;
+            stroke-width: 1px;
+            stroke: $color1;
+        }
+
+        .text-color {
+            fill: $color1;
+        }
+    }
+
+    &.color_2 {
+        .fill {
+
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color2;
+            stroke-width: 1px;
+            stroke: $color2;
+        }
+
+        .text-color {
+            fill: $color2;
+        }
+    }
+
+    &.color_3 {
+        .fill {
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color3;
+            stroke-width: 1px;
+            stroke: $color3;
+        }
+
+        .text-color {
+            fill: $color3;
+        }
+    }
+
+    &.color_4 {
+        .fill {
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color4;
+            stroke-width: 1px;
+            stroke: $color4;
+        }
+
+        .text-color {
+            fill: $color4;
+        }
+    }
+
+    &.color_5 {
+        .fill {
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color5;
+            stroke-width: 1px;
+            stroke: $color5;
+        }
+
+        .text-color {
+            fill: $color5;
+        }
+    }
+
+    &.color_6 {
+        .fill {
+
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color6;
+            stroke-width: 1px;
+            stroke: $color6;
+        }
+
+        .text-color {
+            fill: $color6;
+        }
+    }
+    &.color_7 {
+        .fill {
+
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color8;
+            stroke-width: 1px;
+            stroke: $color8;
+        }
+
+        .text-color {
+            fill: $color8;
+        }
+    }
+    &.color_8 {
+        .fill {
+
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color8;
+            stroke-width: 1px;
+            stroke: $color8;
+        }
+
+        .text-color {
+            fill: $color8;
+        }
+    }
+    &.color_9 {
+        .fill {
+
+            fill: #FFFFFF;
+        }
+
+        .stroke {
+            fill: $color9;
+            stroke-width: 1px;
+            stroke: $color9;
+        }
+
+        .text-color {
+            fill: $color9;
+        }
+    }
+
+
+
+
+
+
+
+    .fill {
+        fill: #FFFFFF;
+    }
+
+    .stroke {
+        fill: #B9B9B9;
+    }
+
+    .text-color {
+        fill: #B9B9B9;
+    }
+}
+
+
+.teeth-settings {
+    display: flex;
+    justify-content: space-between;
+
+    .selected-item {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Poppins Regular';
+        text-transform: capitalize;
+        font-size: 12px;
+        font-weight: bold;
+        color: #8b8b8b;
+
+        div {
+            margin: 5px;
+        }
+    }
+
+    .selected-teeth {
+        font-family: "Poppins Regular";
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: #222b45;
+    }
+
+    .selected-action {}
+}
+
+
+.teeth-legend {
+    margin-top: -40px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .teeth-legend-item {
+        font-family: "Poppins Regular";
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        margin: 5px 10px;
+
+    }
+
+}
+
+.overlay-is-active-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #00000005;
+    z-index: 1;
+    pointer-events: all;
+}
+
+.error-label {
+    font-size: 12px;
+    color: #be0101;
+}
+
+.non-actions {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+}
+
+
+
+
+
+
+
+
+input.radio-card-input[type="radio"]:checked + label.selected-item-card {
+    border: 2px solid #2984FF;
+    box-shadow: none;
+  }
+  input.radio-card-input[type="checkbox"]:checked + label.selected-item-card {
+    border: 2px solid #2984FF;
+    box-shadow: none;
+    &.checkbox {
+        &::before {
+            background-image: url('../../../../assets/images/icons/checkmark.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+  }
+.selected-item-card {
+    width: 124px;
+    height: 124px;
+    border-radius: 8px;
+    background: #F6F5F8;
+    box-shadow: 0px 2px 2px 0px #A5A5A51A;
+    margin: 6px 6px 6px 0;
+    position: relative;
+    padding: 7px;
+    transition: all .1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    &.checkbox {
+        &::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #C0C8D2;
+            box-shadow: 0px 1px 1px 0px #0000001F, 0px 2px 5px 0px #3C425714;
+            top: 8px;
+            left: 10px;
+            border-radius: 5px;
+            background: white;
+        }
+    }
+    &:hover {
+        transition: all .1s ease-in-out;
+        box-shadow: 0px 4px 7px 0px #A5A5A540;
+    }
+    .item-icon {
+        padding: 7px;
+        height: 70%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+           max-width: 50px; 
+        }
+    }
+    .item-title {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'SF UI Text Medium';
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #2C343B;
+    }
+
+}
+.both-arch {
+    pointer-events: all;
+}

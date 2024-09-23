@@ -1,0 +1,78 @@
+@media (max-width: 425px) {
+    // .teeth-section {
+    //   // flex-direction: column;
+    // }
+  }
+  
+  svg{
+    
+    pointer-events: none;
+  }
+  
+  path{
+    pointer-events: fill;
+    cursor: pointer;
+  
+  }
+  
+  .tooth:hover{
+    fill: #0670de;
+    stroke: #0670de;
+    fill-opacity: 0.8
+  
+  }
+  
+  .dp-selected{
+    fill:#0670de;
+    fill-opacity: 0.3;
+    stroke: #0670de;
+  }
+  
+  .teeth-chips{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+  }
+  
+  ::ng-deep .mat-chip-list-wrapper {
+      justify-content: center;
+  
+  }
+  
+  // ::ng-deep .mat-chip.mat-standard-chip .mat-chip-remove{
+  //   color: #ff3d71;
+  
+  // }
+  ::ng-deep .mat-chip-list-wrapper mat-chip {
+    padding: 0 !important;
+    height: 16px !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+    background: #E5E5E5 !important;
+    border-radius: 10px !important;
+    min-height: unset !important;
+    font-size: 11px !important;
+    font-family: "Poppins Regular" !important;
+    @media (max-width: 425px) {
+      font-size: 12px !important;
+      height: 15px !important;
+      
+    }
+    nb-icon {
+      position: absolute!important;
+      color: white!important;
+      right: 4px!important;
+      opacity: 1!important;
+    }
+
+  }
+  
+  ::ng-deep .mat_chip_tooth_without{
+    width: 75px!important;
+  }
+  
+  ::ng-deep .mat_chip_tooth{
+    width: 130px!important;
+  }

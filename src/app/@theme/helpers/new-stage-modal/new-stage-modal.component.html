@@ -1,0 +1,46 @@
+<nb-card class="modal-card">
+    <nb-card-header>
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="modal-title">
+                Select new stage
+            </div>
+        </div>
+        <div class="line"></div>
+
+    </nb-card-header>
+    <nb-card-body>
+
+            <div class="ng-container">
+                <div class="mt-2"  > 
+                    <div class="check-list-title mb-2">
+                        Stages
+                    </div>
+                    <div class="select-qc-checklist">
+                        <nb-checkbox *ngFor="let stage of stageDto" status="basic" [(ngModel)]="stage.value" >
+                            <div class="checkbox-checklist" [innerHtml]="stage.name"></div>
+                        </nb-checkbox>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- <textarea [(ngModel)]="orderStatusDto.note" class="text-area mt-2" rows="5" nbInput fullWidth
+                placeholder="Notes..."></textarea>
+             -->
+             <div class="line"></div>
+    </nb-card-body>
+    <nb-card-footer>
+        <div class="close-modal-container">
+            <button shape="semi-round" (click)="decline()" class="btn-shadow mr-2 close-button-size" nbButton
+                size="small" status="basic">
+                Close
+            </button>
+            <button [disabled]="checkIsNaNchecklist()" shape="semi-round" (click)="approve()" nbButton status="primary" size="small"
+                class="save-button-size">
+              Save
+            </button>
+        </div>
+    </nb-card-footer>
+</nb-card>

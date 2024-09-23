@@ -1,0 +1,51 @@
+<form class="form-horizontal" [formGroup]="form" >
+    <nb-card class="modal-card"
+    nbSpinnerStatus="info">
+        <ng-container>
+            <nb-card-header>
+                <div class="image-box">
+                    <img src="../../../../assets/images/icons/change-delete-icon.svg" alt="">
+                </div>
+                <div class="modal-title">
+                    Shipment Label
+                </div>
+            </nb-card-header>
+            <nb-card-body>
+                <div class="form-modal-group  mt-3 mb-3" [ngClass]="displayFieldCss('carrier')">
+                    <ng-select (change)="onChangeCarriers()" [loading]="isCarrierLoading" appendTo="body" placeholder="All Carrier"
+                        [(ngModel)]="carrierId" id="carrier" formControlName="carrier" [searchable]="false" [clearable]="false">
+                        <ng-option [value]='0' disabled>None</ng-option>
+                        <ng-option *ngFor="let carrier of carrierDtoList"
+                            [value]="carrier.carrierId">{{carrier.friendlyName}}</ng-option>
+                    </ng-select>
+                    <app-field-error-display [displayError]="isFieldValid('carrier')" errorMsg="Please inform your carrier">
+                    </app-field-error-display>
+                </div>
+                <div class="form-modal-group" [ngClass]="displayFieldCss('service')">
+                    <ng-select [loading]="isServiceLoading" appendTo="body" placeholder="All Services" [(ngModel)]="serviceId"
+                        id="service" formControlName="service" [searchable]="false" [clearable]="false"> <ng-option [value]='0'
+                            disabled>None</ng-option>
+                        <ng-option *ngFor="let service of servicesList" [value]="service.serviceCode">{{service.name}}</ng-option>
+                    </ng-select>
+                    <app-field-error-display [displayError]="isFieldValid('service')" errorMsg="Please inform your service">
+                    </app-field-error-display>
+                </div>
+            </nb-card-body>
+        
+            <nb-card-footer>
+                <div class="close-modal-container">
+                    <button shape="semi-round" (click)="decline()" class="btn-shadow mr-2 close-button-size" nbButton
+                        size="small" status="basic">
+                        Close
+                    </button>
+                    <button shape="semi-round" (click)="onSubmit()" nbButton status="primary" size="small"
+                        class="save-button-size">
+                        Save
+                    </button>
+                </div>
+            </nb-card-footer>
+        </ng-container>
+    </nb-card>
+</form>
+
+

@@ -1,0 +1,23 @@
+    <ngx-treatment-teeth-with-pins
+    *ngIf="teeth.showPins"
+    [selectedNotation]="selectedNotation"
+    [selectedUpper]="selectedUpper"
+    [selectedLower]="selectedLower"
+    [notations]="notations"
+    [teeth]="teeth"
+    (notationsChange)="selectItem($event)"
+  >
+  </ngx-treatment-teeth-with-pins>
+  
+  <ngx-treatment-teeth-without-pins
+    *ngIf="!teeth.showPins"
+    [selectedNotation]="selectedNotation"
+    [selectedUpper]="selectedUpper"
+    [selectedLower]="selectedLower"
+    [teeth]="teeth"
+    [notations]="notations"
+    (notationsChange)="selectItem($event)"
+  >
+  </ngx-treatment-teeth-without-pins>
+
+

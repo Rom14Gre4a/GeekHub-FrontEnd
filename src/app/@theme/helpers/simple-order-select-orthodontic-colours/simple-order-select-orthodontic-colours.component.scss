@@ -1,0 +1,120 @@
+.title {
+  font-family: 'Poppins Medium', serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 51px;
+}
+
+.shades-selects-container {
+  margin-bottom: 81px;
+
+  .selects-container {
+    .select-container {
+      margin-bottom: 20px;
+    }
+  }
+
+  .tip-left {
+    right: 3%;
+  }
+
+  .tip-right {
+    left: 3%;
+  }
+}
+
+.radio-buttons-group {
+  width: calc(25% - 6px);
+
+  .radio-buttons-title {
+    font-family: 'Poppins Medium', serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .radio-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    .radio-button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      .radio-button-image-container {
+        margin-bottom: 19px;
+        height: 53px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-height: 100%;
+        }
+      }
+
+      .radio-button-checkbox {
+        margin-bottom: 9px;
+        pointer-events: none;
+
+        ::ng-deep .custom-checkbox {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .radio-button-text {
+        font-family: 'Poppins Medium', serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #333333;
+      }
+    }
+  }
+}
+
+.divider {
+  width: 2px;
+  height: 141px;
+  background-color: #f7f7f7;
+  margin-top: 11px;
+  border-radius: 1px;
+}
+
+.invalid-feedback {
+  font-size: 100%;
+}
+
+
+.select-label {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: "SF UI Text Regular";
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.15px;
+    color: #1A1B25;
+    text-decoration: none;
+}
+
+.select {
+  min-width: 200px;
+}
+
+.colors-mouthguard-teeth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

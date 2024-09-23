@@ -1,0 +1,23 @@
+<div class="date-range-container">
+    <!-- <ng-select (change)="selectedByList()" class="date-range-input" appendTo="body" placeholder="All period" [(ngModel)]="selectedList" id="status"
+        [searchable]="false" [clearable]="false">
+        <ng-option *ngFor="let range of randeSelectArray" [value]="range.name">{{range.name}}</ng-option>
+    </ng-select> -->
+
+
+    <label class="range-icon" for="range_modal">
+        <nb-icon icon="calendar" class="custom-icon" pack="great-pack"></nb-icon>
+        <div class="d-flex date-selected">
+            <div class="date">
+                {{selected?.startDate | date: 'MMM d' }}
+            </div>
+            -
+            <div class="date">
+                {{selected?.endDate | date: 'MMM d' }}
+            </div>
+        </div>
+    </label>
+    <input hidden type="text" class="range-date" ngxDaterangepickerMd [(ngModel)]="selected" [showCustomRangeLabel]="true"
+        [alwaysShowCalendars]="true" (ngModelChange)="ngModelChange($event)" [ranges]="ranges" [linkedCalendars]="true"
+        [isInvalidDate]="isInvalidDate" [showClearButton]="true" id="range_modal" placeholder="Select please..."   async defer />
+</div>

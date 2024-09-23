@@ -1,0 +1,328 @@
+.modal-card {
+    min-width: 600px;
+    min-height: 300px;
+    padding: 14px;
+    border-radius: 12px;
+    border-width: 1px, 1px, 1px, 1px;
+    border-style: solid;
+    border-color: #F6F8FA;
+
+
+    &.fullscreen {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.label-name {
+    font-family: 'SF UI Text Medium';
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: left;
+}
+.modal-title {
+    font-family: 'SF UI Text Medium';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+.close-modal-icon {
+    float: right;
+}
+
+.create-form-body {
+    margin-top: 20px;
+}
+
+.form-modal-group {
+    margin-bottom: 5px;
+}
+.close-modal-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.save-button-size {
+    min-width: 80px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: left;
+}
+.close-button-size {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.15000000596046448px;
+    text-align: left;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .images-box {
+        display: flex;
+        justify-content: center;
+    }
+    .details-box {
+        margin: 20px 0;
+    }
+}
+.select-size-md {
+    max-width: 200px;
+}
+
+
+.header-order-details-modal {
+    padding: 20px 0;
+    background: url('../../../../assets/images/conffeti-md.png') no-repeat 0 center, url('../../../../assets/images/conffeti-lg.png') no-repeat 100% center;
+    .order-details-title {
+        font-family: 'SF UI Text Medium';
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 33px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #30313D;
+    }
+    
+    .order-details-description {
+        margin-top: 8px;
+        font-family: 'SF UI Text Medium';
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #6A7383;
+    }
+}
+
+
+
+.order-content-details {
+    border: 1px solid #ACACAC4D;
+    padding: 10px 20px;
+    width: 100%;
+    .content-head-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .contanct-info {
+            .contact {
+                padding-left: 0;
+                list-style-type: none;
+                margin-bottom: 0;
+                li {
+                    margin-top: 3px;
+                    font-family: 'SF UI Text Medium';
+                    font-size: 11px;
+                    font-weight: 500;
+                    line-height: 15px;
+                }
+            }
+        }
+        .logo-section {
+            img {
+                max-width: 100px;
+            }
+        }
+
+        .barcode-section {
+            max-height: 75px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+          
+        }
+    }
+    .content-footer-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        .contanct-info-sm {
+            .contant-info-footer {
+                    margin-bottom: 5px;
+                    font-family: 'SF UI Text Medium';
+                    font-size: 9px;
+                    font-weight: 400;
+                    line-height: 11px;
+                    letter-spacing: -0.0015em;
+                    text-align: left;
+                    color: #414552;
+                }
+                .privacy {
+                    max-width: 320px;
+                    font-family: 'SF UI Text Medium';
+                    font-size: 6px;
+                    font-weight: 400;
+                    line-height: 8px;
+                    letter-spacing: -0.0015em;
+                    text-align: left;
+                    color: #6A7383;
+                }
+                .company-code {
+                    margin-top: 20px;
+                    font-family: 'SF UI Text Medium';
+                    font-size: 8px;
+                    font-weight: 300;
+                    line-height: 10px;
+                    letter-spacing: -0.0015em;
+                    text-align: left;
+                    color: #6A7383;
+                }
+        }
+        .logo-section {
+            img {
+                max-width: 100px;
+            }
+            .powered-by {
+                margin-top: 10px;
+                font-family: 'SF UI Text Medium';
+                font-size: 8px;
+                font-weight: 400;
+                line-height: 10px;
+                letter-spacing: -0.0015em;
+                color: #ACACACCC;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                img {
+                    margin-top: 3px;
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+}
+
+.order-info-by-order {
+    margin-top: 15px;
+    width: 100%;
+    .table-info-title {
+        padding: 3px 0px;
+        font-family: 'SF UI Text Medium';
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.15000000596046448px;
+        color: #1A1B25;
+    }
+    .table-base {
+        margin-top: 5px;
+        width: 100%;
+        .thead {
+            padding: 3px 0px;
+            font-family: 'SF UI Text Medium';
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            letter-spacing: 0em;
+            color: #30313D;
+        }
+        .tbody {
+            padding: 3px 0px;
+            font-family: 'SF UI Text Medium';
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 14px;
+            letter-spacing: -0.0015em;
+            color: #30313D;
+        }
+    }
+
+}
+
+.order-info {
+    .table-tag {
+        width: 100%;
+        border-radius: 3px;
+        background: #2984FFB2;
+        .thead {
+            padding: 3px 8px;
+            font-family: 'SF UI Text Medium';
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: -0.0015em;
+            color: #FFFFFF;
+        }
+        .tbody {
+            padding: 3px 8px;
+            font-family: 'SF UI Text Medium';
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 17px;
+            letter-spacing: -0.0015em;
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+.content-body-section {
+    border-top: 2px solid #F6F8FA;
+    border-bottom: 2px solid #F6F8FA;
+}
+.details-by-order {
+    border-right: 2px solid #F6F8FA;
+}
+.order-title {
+    font-family: 'SF UI Text Medium';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #30313D;
+    margin: 10px 0;
+}
+
+.teeth-section {
+    display: flex;
+    padding: 20px 15px;
+    justify-content: center;
+    align-items: center;
+    .teeth-icon {
+        margin: 10px;
+        max-width: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .teeth-img {
+            width: 100%;
+        }
+        .checkbox-icon {
+            margin-top: 10px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+.notes-section {
+    padding: 0 8px;
+    .comment-note {
+        margin-top: 5px;
+        border: 1px solid #F6F8FA;
+        border-radius: 4px;
+        min-height: 300px;   
+        padding: 5px;
+    }
+}
+
+
+
+.contanct-footer-section {
+    display: flex;
+    flex-direction: column;
+}

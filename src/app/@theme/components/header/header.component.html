@@ -1,0 +1,145 @@
+<section class="header-conatiner">
+  <div class="container">
+    <div class="justify-content-between row m-0 w-100">
+      <div class="col-4">
+        <div class="great-logo-container" routerLink="/pages/dashboard">
+          <img [src]="user.logo? user.logo : './assets/images/greatlab-logo.png'" alt="logo">
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="great-search-container">
+          <nb-form-field>
+            <nb-icon nbPrefix icon="search-outline" pack="eva" class="secondary-color"></nb-icon>
+            <input  (change)="searchBar($event.target.value)" type="text" nbInput fullWidth fieldSize="small" placeholder="Search..." shape="round">
+          </nb-form-field>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="great-header-menu-container">
+          <div class="actions-list">
+            <div (click)="openChat()" class="action-item">
+              <img class="action-item-icon" src="./assets/images/icons/help.svg" alt="help">
+              <div class="action-item-label">Help</div>
+            </div>
+            <div class="action-item" *ngIf="user.userroles != 'Doctor'">
+              <img class="action-item-icon" src="./assets/images/icons/notifications.svg" alt="notifications">
+            </div>
+            <div class="action-item"  *ngIf="user.userroles !== 'Doctor'" routerLink="/pages/settings">
+              <img class="action-item-icon" src="./assets/images/icons/settings.svg" alt="settings">
+            </div>
+            <div class="action-item">
+              <img [nbPopover]="profileTemplateRef" nbPopoverPlacement="bottom" class="action-item-icon"
+                src="./assets/images/icons/person.svg" alt="person">
+              <div>
+                <div class="show-details-action">
+                  <ng-template #profileTemplateRef>
+                    <div class="popover-section">
+                      <div class="popover-group">
+                        <div class="name-title">
+                          {{user.username}}
+                        </div>
+                        <hr>
+                        <div (click)="logout()" class="popover-item">
+                          Log out
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="header-menu">
+  <div class="container">
+    <div class="row w-100 m-0">
+      <div class="col-9 ">
+        <div class="navigation-container">
+          <div class="navigation-list">
+            <a *ngIf="isWelocme && user.userroles == 'LocationAdmin' " class="navigat-item position-relative" routerLink="/pages/welcome" routerLinkActive="active">
+              Welcome
+            </a>
+            <a class="navigat-item position-relative" routerLink="/pages/dashboard" routerLinkActive="active">
+              Dashboard
+              <div *ngIf="user.userroles == 'Doctor' && countInboxDoctor !== 0" class="badge-danger-notify">
+                {{countInboxDoctor}}</div>
+            </a>
+         
+
+            <!-- <a class="navigat-item" routerLink="/pages/location"
+            routerLinkActive="active">
+              Locations
+            </a>
+            <a class="navigat-item" routerLink="/pages/practice"
+            routerLinkActive="active">
+              Practices
+            </a> -->
+            <a class="navigat-item" routerLink="/pages/orders" routerLinkActive="active">
+              Orders
+            </a>
+           
+            <a *ngIf="user.userroles !== 'Doctor'" class="navigat-item" routerLink="/pages/doctors/account-holders"
+              routerLinkActive="active">
+              Doctors
+            </a>
+            <!-- <a *ngIf="user.userroles !== 'Doctor'" class="navigat-item" routerLink="/pages/doctors"
+            routerLinkActive="active">
+            Doctors
+          </a> -->
+            <a class="navigat-item" routerLink="/pages/billing"  routerLinkActive="active">
+              Billing
+            </a>
+            <a *ngIf="user.userroles !== 'Doctor'" class="navigat-item" routerLink="/pages/workbench" routerLinkActive="active">
+              Workbench
+            </a>
+            <a *ngIf="user.userroles == 'Doctor'" class="navigat-item" routerLink="/pages/patients"
+              routerLinkActive="active">
+              Patients
+            </a>
+            <a *ngIf="user.userroles !== 'Doctor' && user.userroles !== 'Admin'" class="navigat-item position-relative"
+              routerLink="/pages/inbox" routerLinkActive="active">
+              Inbox
+              <div *ngIf="countInbox !== 0" class="badge-danger-notify">{{countInbox}}</div>
+            </a>
+
+            <!-- <a class="navigat-item">
+              Billing
+            </a> -->
+            <!-- <a class="navigat-item">
+              Workbench
+            </a>
+            <a class="navigat-item">
+              Co-Share
+            </a> -->
+            <!-- <a class="navigat-item">
+              Transfer
+            </a> -->
+            <!-- <a class="navigat-item">
+              Plans
+            </a> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="header-menu-actions">
+          <!-- <button class="btn-shadow mr-2" nbButton size="small" status="basic">
+            <nb-icon class="custom-icon" pack="great-pack" icon="export-arrow"></nb-icon>
+            Export
+          </button> -->
+          <button *ngIf="user.userroles !== 'Admin'" (click)="findOrder()" class="btn-shadow" nbButton size="small"
+            status="basic">
+            <nb-icon class="custom-icon" pack="great-pack" icon="find-order"></nb-icon>
+            Find order
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

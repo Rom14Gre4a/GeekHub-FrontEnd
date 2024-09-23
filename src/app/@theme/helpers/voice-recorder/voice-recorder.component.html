@@ -1,0 +1,37 @@
+<div class="d-flex align-items-center">
+	<div class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">
+        <img src="../../../../assets/images/icons/micro.svg" alt="">
+    </div>
+	<div class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">
+        <img src="../../../../assets/images/icons/stop.svg" alt="">
+    </div>
+	<div class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">
+        <img src="../../../../assets/images/icons/clear.svg" alt="">
+    </div>
+
+	<!-- <br>
+	<button class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="download()">Download Recording</button> -->
+
+	<div class="record-processe" *ngIf="isRecording && !blobUrl">
+        <div  class="voice-record-bar">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="timeline">
+            {{recordedTime}} 
+        </div>
+    </div>
+	<div>
+		<audio class="result-audio" *ngIf="!isRecording && blobUrl" controls>
+			<source [src]="blobUrl" type="audio/webm">
+		</audio>
+	</div>
+</div>

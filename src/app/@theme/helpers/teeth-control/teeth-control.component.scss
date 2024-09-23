@@ -1,0 +1,30 @@
+.teeth {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &.active {
+         .fill {
+            fill:  #D4E4F9;
+
+        }
+        .stroke {
+            // fill: #B9B9B9;
+            fill: #3F91FF;
+
+        }
+        .text-color {
+            // fill:  #FFFFFF;
+            fill:  transparent;
+        }
+    }
+    .fill {
+        fill: #FFFFFF;
+    }
+    .stroke {
+        fill:#707070;
+
+    }
+    .text-color {
+        // fill:  #B9B9B9;
+        fill:  transparent;
+    }
+}
